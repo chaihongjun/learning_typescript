@@ -2,7 +2,7 @@
 /*
  * @Author: ChaiHongJun
  * @Date: 2019-12-12 14:59:39
- * @LastEditTime: 2019-12-12 17:13:27
+ * @LastEditTime: 2019-12-14 10:37:16
  * @LastEditors: ChaiHongJun
  * @Description: 头部文件注释
  */
@@ -18,6 +18,10 @@ var human = {
     name: "JayChou"
 };
 var man = {
-    name: "Quinlivan",
-    1: 1
+    name: "ROMEO",
+    1: 1 //这里没报错是因为，数字类型的属性索引会被JS转换成字符串类型
+};
+var woman = {
+    name: 1,
+    1: "Hannah"
 };

@@ -1,7 +1,7 @@
 /*
  * @Author: ChaiHongJun
  * @Date: 2019-12-12 14:59:39
- * @LastEditTime: 2019-12-12 17:13:27
+ * @LastEditTime: 2019-12-14 10:37:16
  * @LastEditors: ChaiHongJun
  * @Description: 头部文件注释
  */
@@ -14,7 +14,7 @@
 2. 任意属性的类型必须包含接口已经存在的确定属性和可选属性类型
 */
 
-// 接口的属性类型必须是number 或者  string
+// 接口的属性类型索引必须是number 或者  string
 interface Human {
   name: string;
   [properName: string]: any;
@@ -26,10 +26,20 @@ let human: Human = {
 
 interface Man {
   name: string;
-  [properName: number]: any;
+  [properName: string]: any; //这里指定任意类型属性类型是 string
 }
 
 let man: Human = {
-  name: "Quinlivan",
-  1: 1
+  name: "ROMEO",
+  1: 1 //这里没报错是因为，数字类型的属性索引会被JS转换成字符串类型
+};
+
+interface Woman {
+  name: number;
+  [properName: number]: string;
+}
+
+let woman: Woman = {
+  name: 1,
+  1: "Hannah"
 };
